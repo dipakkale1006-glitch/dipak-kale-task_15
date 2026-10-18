@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations in JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1><span>Task 15:</span> JavaScript - Array Operations</h1>
+
+        <!-- Interactive Array Operations Card -->
+        <div class="card app-card">
+            <div class="screen" id="screenHeader">
+                <p>Array Operations Dashboard</p>
+                <h2 id="resultTitle">Array Analysis Results</h2>
+            </div>
+
+            <form id="arrayForm">
+                <label for="arrayInput">Enter Numbers (comma-separated):</label>
+                <input type="text" id="arrayInput" value="4, 8, 2, 11, 6, 7, 10" placeholder="e.g. 4, 8, 2, 11, 6, 7, 10" required>
+
+                <div class="preset-buttons">
+                    <span>Quick Presets:</span>
+                    <button type="button" class="btn-preset" data-arr="4, 8, 2, 11, 6, 7, 10">Sample 1 (Default)</button>
+                    <button type="button" class="btn-preset" data-arr="15, 22, 9, 34, 51, 8, 3">Sample 2</button>
+                    <button type="button" class="btn-preset" data-arr="100, 45, 78, 23, 90, 11">Sample 3</button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" id="calculateBtn">Run Operations</button>
+                    <button type="reset" class="reset" id="resetBtn">Reset</button>
+                </div>
+            </form>
+
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer">
+                <!-- Array Visual Chips -->
+                <div class="array-preview">
+                    <span class="preview-label">Array Elements:</span>
+                    <div class="chips-wrap" id="chipsWrap">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Result Row 1: Maximum Number -->
+                <div class="result-row">
+                    <div class="label-group">
+                        <span class="row-label">Maximum number:</span>
+                        <span class="fn-tag fn-named">Named Function</span>
+                    </div>
+                    <strong class="row-value highlight-blue" id="valMax">11</strong>
+                </div>
+
+                <!-- Result Row 2: Sum of All Elements -->
+                <div class="result-row">
+                    <div class="label-group">
+                        <span class="row-label">Sum of all elements:</span>
+                        <span class="fn-tag fn-anon">Anonymous Function</span>
+                    </div>
+                    <strong class="row-value highlight-green" id="valSum">48</strong>
+                </div>
+                <div class="calc-detail" id="calcDetail">
+                    Calculation: 4 + 8 + 2 + 11 + 6 + 7 + 10 = 48
+                </div>
+
+                <!-- Result Row 3: Count of Odd Numbers -->
+                <div class="result-row">
+                    <div class="label-group">
+                        <span class="row-label">Count of odd numbers:</span>
+                        <span class="fn-tag fn-arrow">Arrow Function</span>
+                    </div>
+                    <strong class="row-value highlight-orange" id="valOddCount">2</strong>
+                </div>
+                <div class="odd-detail" id="oddDetail">
+                    Odd elements found: 11, 7
+                </div>
+            </div>
+        </div>
+
+        <!-- Function Types Implementation Reference Card -->
+        <div class="card fn-card">
+            <h3>Function Implementations Reference</h3>
+            <p class="desc">As required by the assignment, different JavaScript function types are utilized to perform each operation on the array:</p>
+
+            <div class="fn-grid">
+                <div class="fn-box">
+                    <div class="fn-header">
+                        <span class="fn-type-badge named-badge">1. Named Function</span>
+                        <h4>findMax(arr)</h4>
+                    </div>
+                    <pre class="fn-snippet">function findMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i &lt; arr.length; i++) {
+        if (arr[i] &gt; max) max = arr[i];
+    }
+    return max;
+}</pre>
+                </div>
+
+                <div class="fn-box">
+                    <div class="fn-header">
+                        <span class="fn-type-badge anon-badge">2. Anonymous Function</span>
+                        <h4>calculateSum(arr)</h4>
+                    </div>
+                    <pre class="fn-snippet">const calculateSum = function(arr) {
+    let sum = 0;
+    for (let i = 0; i &lt; arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+};</pre>
+                </div>
+
+                <div class="fn-box">
+                    <div class="fn-header">
+                        <span class="fn-type-badge arrow-badge">3. Arrow Function</span>
+                        <h4>countOddNumbers(arr)</h4>
+                    </div>
+                    <pre class="fn-snippet">const countOddNumbers = (arr) =&gt; {
+    let count = 0;
+    for (let i = 0; i &lt; arr.length; i++) {
+        if (arr[i] % 2 !== 0) count++;
+    }
+    return count;
+};</pre>
+                </div>
+            </div>
+
+            <!-- Console Log Output Box -->
+            <div class="console-box">
+                <div class="console-header">
+                    <span>Browser Console Output Preview (Press F12)</span>
+                </div>
+                <pre class="console-code">Ex Array:- [4, 8, 2, 11, 6, 7, 10]
+Maximum number: 11
+Sum of all elements: 48
+Count of odd numbers: 2</pre>
+            </div>
+        </div>
+
+        <footer>Made with HTML, CSS & JavaScript | Dipak Kale</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
